@@ -7,6 +7,12 @@
  * @return {String|Boolean} The extension (without the period) or false if no
  * extension
  */
-module.exports = function fileExtension(name) {
 
+module.exports = function fileExtension(name) {
+	var dot = name.lastIndexOf('.');
+	if (dot === -1) {
+		return false;
+	}
+	var ext = name.substr(dot+1)
+	return ext;
 };
